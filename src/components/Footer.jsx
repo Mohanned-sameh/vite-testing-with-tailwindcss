@@ -29,11 +29,11 @@ function Footer() {
               Contact Us
             </a>
           </nav>
-          <div className="flex flex-col sm:gap-2">
-            <p className="text-right">
+          <div className="flex flex-col sm:gap-4 py-2">
+            <p className="sm:text-left text-left">
               CopyRight &copy; <span id="year">2022</span>
             </p>
-            <p className="text-right">All Rights Reserved</p>
+            <p className="text-left">All Rights Reserved</p>
           </div>
         </section>
       </footer>
