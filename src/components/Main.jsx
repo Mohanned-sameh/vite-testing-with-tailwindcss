@@ -146,7 +146,7 @@ function Main() {
                 id="subject"
                 required
                 minLength="3"
-                maxlength="60"
+                maxLength="60"
                 placeholder="Your Subject"
                 className="w-full text-black text-2xl sm:text-3xl rounded-xl p-3 border border-solid border-slate-900 dark:border-none"
               />

@@ -1,6 +1,11 @@
 import React from "react";
 
 export default function Header() {
+  const toggleMenu = () => {
+    document.getElementById("mobile-menu").classList.toggle("hidden");
+    document.getElementById("mobile-menu").classList.toggle("flex");
+  };
+
   return (
     <>
       <header className="bg-teal-700 text-white sticky top-0 z-10">
@@ -9,12 +14,13 @@ export default function Header() {
             <a href="#hero">🚀 Acme Rockets</a>
           </h1>
           <button
-            id="mobile-open-button"
-            className="text-3xl sm:hidden focus:outline-none"
+            id="hamburger-button"
+            onClick={toggleMenu}
+            className="text-3xl md:hidden cursor-pointer relative w-8 h-8"
           >
-            &#9776;
+            {/* &#9776; */}
           </button>
-          <nav className="hidden sm:block space-x-8 text-xl" aria-label="main">
+          <nav className="hidden md:block space-x-8 text-xl" aria-label="main">
             <a href="#rockets" className="hover:opacity-90">
               Our Rockets
             </a>
@@ -23,6 +29,48 @@ export default function Header() {
             </a>
             <a href="#contact" className="hover:opacity-90">
               Contact
+            </a>
+          </nav>
+        </section>
+        <section
+          id="mobile-menu"
+          onClick={toggleMenu}
+          className="absolute top-68 w-full text-5xl flex-col justify-content-center origin-top animate-open-menu bg-black hidden"
+        >
+          <button className="text-8xl self-end px-6">{/* &times; */}</button>
+          <nav
+            className="flex flex-col min-h-screen items-center py-8"
+            aria-label="mobile"
+          >
+            <a
+              href="#hero"
+              className="w-full text-center py-6 hover:opacity-90"
+            >
+              Home
+            </a>
+            <a
+              href="#rockets"
+              className="w-full text-center py-6 hover:opacity-90"
+            >
+              Rockets
+            </a>
+            <a
+              href="#testimonials"
+              className="w-full text-center py-6 hover:opacity-90"
+            >
+              Testimonials
+            </a>
+            <a
+              href="#contact"
+              className="w-full text-center py-6 hover:opacity-90"
+            >
+              Contact Us
+            </a>
+            <a
+              href="#footer"
+              className="w-full text-center py-6 hover:opacity-90"
+            >
+              Legal
             </a>
           </nav>
         </section>
